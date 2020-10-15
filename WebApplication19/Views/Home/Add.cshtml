@@ -1,0 +1,27 @@
+﻿@model WebApplication19.Models.Animal
+@{
+    ViewData["Title"] = "Добавление животного";
+}
+
+<div>
+    <form asp-area="" asp-controller="Home" asp-action="Add" method="post" enctype="multipart/form-data">
+
+        <label asp-for="Kind"></label>
+        <input asp-for="Kind" />
+        <br />
+        <label asp-for="Date"></label>
+        <input type="date" asp-for="Date" />
+        <br />
+        <label asp-for="Sex"></label>
+        <input asp-for="Sex" />
+        <br />
+        <label asp-for="PathImage"></label>
+        <input type="file" name="pathImage" id="pathImage" />
+        @*<div>
+            <img class="img-block" src="~/img/@Model.TitleImagePath" />
+        </div>*@
+        <br />
+        <br />
+        <input type="submit" value="Сохранить" />
+    </form>
+</div>

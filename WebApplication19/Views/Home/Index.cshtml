@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WebApplication19.Models.Animal>
+@{
+    ViewData["Title"] = "Каталог Животных";
+}
+<h3>Животные</h3>
+<table class="table" style="width: 40%;">
+    <thead>
+        <tr>
+            <th>Вид</th>
+            <th>Возраст</th>
+            <th>Пол</th>
+            <th>img</th>
+            <th>Действия</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var animal in Model)
+        {
+            <tr>
+                <td scope="row">@animal.Kind</td>
+                <td>@animal.Age дн.</td>
+                <td>@animal.Sex</td>
+                <td><img src="@animal.PathImage" alt=""/></td>
+                <td><a href="~/Home/Delete/@animal.Id">удалить</a> <a href="~/Home/Edit/@animal.Id">редактировать</a></td>
+                <td><a style="color: green;" href="~/Home/Buy/@animal.Id"><strong>Купить</strong></a></td>
+            </tr>
+        }
+        <tr>
+            <td><a href="~/Home/Add">Добавить</a></td>
+        </tr>
+    </tbody>
+</table>

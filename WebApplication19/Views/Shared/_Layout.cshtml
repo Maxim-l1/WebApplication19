@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/image.css" />
+</head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, sans-serif;">
+    <!--меню-->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><a href="~/Home/Index" class="navbar-brand">Главная</a></li>
+                    <li><a href="~/Home/Order" class="navbar-brand">Все заказы</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--основной контент-->
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>© AnimalStore</p>
+        </footer>
+    </div>
+</body>
+</html>
